@@ -1,5 +1,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv').config();
+
+const app = express();
+
+const MONGODB_URI = process.env.MONGODB_URI; // We'll set this in the next step
+
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+})
+.then(() => console.log('Connected to MongoDB Atlas'))
+.catch(err => console.error('Could not connect to MongoDB Atlas', err));
+
 const bodyParser = require('body-parser');
 
 const app = express();
