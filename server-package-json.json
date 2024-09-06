@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "Backend for Todo Calendar App",
   "main": "index.js",
+  "homepage": "https://sriloksagar.github.io/todo",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "express": "^4.17.1",
