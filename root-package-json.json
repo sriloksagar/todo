@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "description": "Todo Calendar App with React frontend and Express backend",
   "main": "index.js",
+  "homepage": "https://sriloksagar.github.io/todo",
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "server": "cd server && npm start",
     "client": "cd client && npm start",
-    "install": "cd server && npm install && cd ../client && npm install"
+    "install": "cd server && npm install && cd ../client && npm install",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "concurrently": "^6.0.2"
